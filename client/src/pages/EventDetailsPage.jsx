@@ -4,8 +4,7 @@ import { motion } from 'framer-motion'
 import Navbar from '../components/Navbar.jsx'
 import LoadingSpinner from '../components/LoadingSpinner.jsx'
 import { formatCurrency } from '../utils/formatCurrency.js'
-
-const API_BASE = 'http://localhost:4000';
+import { API_BASE, GOOGLE_MAPS_EMBED_KEY } from '../config.js'
 
 export default function EventDetailsPage() {
   const { id } = useParams()
@@ -56,10 +55,9 @@ export default function EventDetailsPage() {
   }
 
   const mapQuery = encodeURIComponent(event.location || '')
-  const googleMapsEmbedKey = import.meta.env.VITE_GOOGLE_MAPS_EMBED_KEY
   const mapSrc = mapQuery
-    ? (googleMapsEmbedKey
-      ? `https://www.google.com/maps/embed/v1/place?key=${googleMapsEmbedKey}&q=${mapQuery}&zoom=12`
+    ? (GOOGLE_MAPS_EMBED_KEY
+      ? `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_EMBED_KEY}&q=${mapQuery}&zoom=12`
       : `https://www.google.com/maps?q=${mapQuery}&output=embed`)
     : ''
 

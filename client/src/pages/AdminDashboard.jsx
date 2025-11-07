@@ -4,8 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from '../components/Navbar.jsx'
 import LoadingSpinner from '../components/LoadingSpinner.jsx'
 import { formatCurrency } from '../utils/formatCurrency.js'
-
-const API_BASE = 'http://localhost:4000';
+import { API_BASE } from '../config.js'
 
 function toLocalInput(dt) {
   if (!dt) return ''
