@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.env
+.env.*
+.DS_Store
+coverage/
+*.log
+
+# Client-specific ignores
+client/dist/
+client/.env
+client/.env.*
+client/.parcel-cache/
+client/.vite/
+
+# Server-specific ignores
+server/dist/
+server/.env
+server/.env.*
+server/.nyc_output/
+
+
